@@ -12,20 +12,21 @@ const eqArrays = function(arrayOne, arrayTwo) {
   return true;
 };
 
-const assertArraysEqual = function(array1, array2, expected) {
-  if(eqArrays(array1, array2) === expected){
-    return 'Both arrays are identical';
+const assertArraysEqual = function(array1, array2) {
+  if(eqArrays(array1, array2) === true){
+    console.log(`Passed -> [${array1}] === [${array2}]`);
+  } else {
+    console.log(`Failed -> [${array1}] !== [${array2}]`);
   }
-  return 'The two arrays are different.';
 };
 
-// Test Cases (True)
-console.log('True:', assertArraysEqual([1, 2, 3], [1, 2, 3], true));
-console.log('True:', assertArraysEqual(["1", "2", "3"], ["1", "2", "3"], true));
-console.log('True:', assertArraysEqual([1, 1, 3], [1, 1, 3,], true));
-console.log('True:', assertArraysEqual([], [], true));
 
+// Test Cases (Passed)
+assertArraysEqual([1, 2, 3], [1, 2, 3]);
+assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]);
+assertArraysEqual([1, 1, 3], [1, 1, 3,]);
+assertArraysEqual([], []);
 
-console.log('False:', assertArraysEqual([1, 2, 3], [3, 2, 1], true));
-console.log('False:', assertArraysEqual(["1", "2", "3"], ["1", "2", 3], false));
-console.log('False:', assertArraysEqual([1, 2, 3], [3, 2, 1, 2], false));
+assertArraysEqual([1, 2, 3], [3, 2, 1]);
+assertArraysEqual(["1", "2", "3"], ["1", "2", 3]);
+assertArraysEqual([1, 2, 3], [3, 2, 1, 2]);
