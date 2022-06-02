@@ -8,8 +8,9 @@ const assertEqual = function(actual, expected) {
 };
 
 const countLetters = sentence => {
+  let newSentence = sentence.replace(/\s/g, '');
   let totalCount = {};
-  for (let char of sentence) {
+  for (let char of newSentence) {
     if (totalCount[char]) {
       totalCount[char]++;
     } else {
