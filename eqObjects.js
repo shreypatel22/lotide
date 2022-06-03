@@ -1,15 +1,5 @@
 const eqArrays = require('./eqArrays');
 
-
-// Function Declaration
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`🟢🟢🟢Assertion Passed: [${actual}] === [${expected}]`);
-  } else {
-    console.log(`🔴🔴🔴Assertion failed: [${actual}] !== [${expected}]`);
-  }
-};
-
 const eqObjects = (object1, object2) => {
   
   let keys1 = Object.keys(object1);
